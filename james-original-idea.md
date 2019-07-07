@@ -5,14 +5,14 @@ The main program will be a RADIUS server providing auth for the AP. An admin cre
 There are multiple pros for running this at home or small office:
 
 
-• WPA2 Enterprise provides significantly better security than PSK or plain portal
-• WiFi key share app typically do not support WPA2 Enterprise
-• Low cost, you only need a RasPi and many home AP (even cheap TP-Link ones) support RADIUS
-• No manual user creation process for guests
-• No shared accounts AND still able to log or invalidate any one device
-• You can use different usernames to put devices into different VLANs if supported by AP
-• Credential change over time automatically, do not need to rotate password manually, and connected devices still work
-• You can use a screen/pad to display guest credentials to guests, or even use a TOTP authenticator app on the phone
+* WPA2 Enterprise provides significantly better security than PSK or plain portal
+* WiFi key share app typically do not support WPA2 Enterprise
+* Low cost, you only need a RasPi and many home AP (even cheap TP-Link ones) support RADIUS
+* No manual user creation process for guests
+* No shared accounts AND still able to log or invalidate any one device
+* You can use different usernames to put devices into different VLANs if supported by AP
+* Credential change over time automatically, do not need to rotate password manually, and connected devices still work
+* You can use a screen/pad to display guest credentials to guests, or even use a TOTP authenticator app on the phone
 
 
 Still I think its security model need careful evaluation since there are always bad boys scanning your WiFi trying to get some free internet or even capture some data on it. o
