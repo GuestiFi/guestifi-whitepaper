@@ -15,7 +15,7 @@ There are multiple pros for running this at home or small office:
 * You can use a screen/pad to display guest credentials to guests, or even use a TOTP authenticator app on the phone
 
 
-Still I think its security model need careful evaluation since there are always bad boys scanning your WiFi trying to get some free internet or even capture some data on it. o
+Still I think its security model need careful evaluation since there are always bad boys scanning your WiFi trying to get some free internet or even capture some data on it. 
 
 James Swineson
 2018-11-29
