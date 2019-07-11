@@ -6,6 +6,8 @@
   - [Pros](#Pros)
   - [Cons](#Cons)
 - [Technical Implementation Details](#Technical-Implementation-Details)
+  - [Method 1: One Key Per Device](#Method-1-One-Key-Per-Device)
+  - [Method 2: TOTP](#Method-2-TOTP)
 
 ## Abstract
 
@@ -43,3 +45,19 @@ TBD
 ## Technical Implementation Details
 
 The main program will be a RADIUS server providing auth for the AP. An admin creates a username/key pair (e.g., 'guest' and a random key), and all users will do auth to the AP using that username ('guest') and the 6-digit TOTP code derived from that random key. Once auth is finished, the auth information (device NAS number aka MAC address, username, TOTP code at that time) will be kept in database. When next time that device connects, it would automatically login using cached credential, eliminating the need to input password again.
+
+### Method 1: One Key Per Device
+
+1. Controller generates new username and password
+1. Controller writes username and password into RADIUS database
+1. User logs in with username password
+1. Upon receiving authentication request
+   1. Check if username and password matches
+   1. Check if there's a MAC address associated with the credentials
+      - **Yes**: Check if MAC current MAC address matches the MAC address registered. If yes, permit login request
+      - **No**: If username and password matches and no MAC address is associated with the current authenticated account, permit login and associate credentials with current MAC address
+1. Controller rotates and generates a new set of credentials. New cycle begins
+
+### Method 2: TOTP
+
+TBD
